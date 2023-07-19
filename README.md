@@ -1,24 +1,61 @@
-# README
+# 実装したい機能
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ユーザー管理機能
+#### 必要な項目
+- メールアドレス
+- パスワード
+- パスワード再入力
+- 名前
+- プロフィール
+- 所属
+- 役職
+新規登録ボタン
 
-Things you may want to cover:
+## 投稿機能
+#### 必要な項目
+- プロトタイプの名称
+- キャッチコピー
+- コンセプト
+- プロトタイプの画像
+保存するボタン
 
-* Ruby version
+# テーブル設計
+- コメント
+送信するボタン
+## users
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| email              | string     | null: false, unique: true      |
+| password           | string     | null: false                    |
+| encrypted_password | string     | null: false                    |
+| name               | string     | null: false                    |
+| profile            | text       | null: false                    |
+| Affiliation        | text       | null: false                    |
+| occupation         | text       | null: false                    |
 
-* System dependencies
+### Association
+- has_many :prototypes
+- has_many :comments
 
-* Configuration
+## prototypes
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| title              | string     | null: false                    |
+| catch_copy         | text       | null: false                    |
+| concept            | text       | null: false                    |
+| user_id            | references | null: false, foreign_key: true |
 
-* Database creation
+### Association
+- has_many :comments
+- belongs_to :user
 
-* Database initialization
+## comments
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| comment            | text       | null: false                    |
+| user_id            | references | null: false, foreign_key: true |
+| prototypes_id      | references | null: false, foreign_key: true |
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Association
+- belongs_to :user
+- belongs_to :prototype
