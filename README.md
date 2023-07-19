@@ -29,9 +29,9 @@
 | password           | string     | null: false                    |
 | encrypted_password | string     | null: false                    |
 | name               | string     | null: false                    |
-| profile            | string     | null: false                    |
-| Affiliation        | string     | null: false                    |
-| occupation         | string     | null: false                    |
+| profile            | text       | null: false                    |
+| Affiliation        | text       | null: false                    |
+| occupation         | text       | null: false                    |
 
 ### Association
 - has_many :prototypes
