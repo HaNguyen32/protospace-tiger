@@ -24,6 +24,7 @@
 送信するボタン
 ## users
 | Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
 | email              | string     | null: false, unique: true      |
 | password           | string     | null: false                    |
 | encrypted_password | string     | null: false                    |
@@ -38,6 +39,7 @@
 
 ## prototypes
 | Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
 | catch_copy         | text       | null: false                    |
 | concept            | text       | null: false                    |
@@ -49,6 +51,7 @@
 
 ## comments
 | Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
 | comment            | text       | null: false                    |
 | user_id            | references | null: false, foreign_key: true |
 | prototypes_id      | references | null: false, foreign_key: true |
