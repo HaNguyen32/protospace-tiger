@@ -30,8 +30,13 @@
 | encrypted_password | string     | null: false                    |
 | name               | string     | null: false                    |
 | profile            | text       | null: false                    |
+<<<<<<< Updated upstream
 | Affiliation        | text       | null: false                    |
 | occupation         | text       | null: false                    |
+=======
+| occupation         | text       | null: false                    |
+| position           | text       | null: false                    |
+>>>>>>> Stashed changes
 
 ### Association
 - has_many :prototypes
